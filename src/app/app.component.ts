@@ -35,7 +35,7 @@ export class AppComponent {
   constructor(private fb: FormBuilder) {
     this.form = fb.group({
       nombre: ['', [Validators.required]],
-      numero: ['', [Validators.required]],
+      numero: ['', [Validators.required, Validators.minLength(16)]],
       mm: ['', [Validators.required]],
       yy: ['', [Validators.required]],
       CVC: ['', [Validators.required]]
@@ -100,13 +100,11 @@ export class AppComponent {
       if (!pattern.test(inputChar)) {
         this.label_numero = this.wrong_input;
         this.style_number = { "border-color": "red" }
-        // console.log(this.style_x);
-
         event.preventDefault();
       } else {
         this.label_numero = { "font-size": "12px", "color": "transparent" };
         this.style_number = { "border-color": "cadetblue" };
-        //console.log(this.style_x);
+        
       }
 
     }
