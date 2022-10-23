@@ -45,21 +45,21 @@
 
 
         <div class="col-md-3 col-lg-3 col-sm-12 d-none d-md-block"
-            style="background-image: url('assets/bg-main-desktop.png');background-repeat: no-repeat;background-attachment: fixed; height: 620px;background-size: 100%;">
+            style="background-image: url('assets/bg-main-desktop.png');background-repeat: no-repeat;background-attachment: fixed; height: 860px;background-size: 100%;">
 
 
 
             <!-- version tablet -->
             <div class="d-none d-md-block d-lg-none" style="background-image: url('assets/bg-card-front.png'); background-repeat: no-repeat;
-            margin-left:60%; margin-top: 50%; width: 100%; background-size: 100% 100%; height: 28%;width: 135%;">
+            margin-left:60px; margin-top: 90px; width: 100%; background-size: 100% 100%; height: 160px;width: 135%;">
                 <div>
 
                     <img src="assets/card-logo.svg" alt=""
                         style="margin-top: 3%; width: 20%; height: 20%; margin-left: 5%;">
 
                     <h3 class=" text-white text-center"
-                     style="margin-left: 5%; margin-top: 10%">{{numero | mask: '0000 0000 0000 0000'}}</h3>
-                    <div class="flex text-white" style="margin-top: 8%;">
+                     style="margin-left: 5%; margin-top: 8%">{{numero | mask: '0000 0000 0000 0000'}}</h3>
+                    <div class="flex text-white" style="margin-top: 6%;">
                         <p style="margin-left: 5%;">{{nombre}}</p>
                         <p style="margin-left: auto; margin-right: 5%;">{{mm}}/{{yy}}</p>
 
@@ -67,11 +67,11 @@
                 </div>
             </div>
             <div class="d-none d-md-block d-lg-none" style="background-image: url('assets/bg-card-back.png'); background-repeat: no-repeat;
-            margin-left:90%; margin-top: 10%; width: 100%; background-size: 100% 100%; height: 28%;width: 135%;">
+            margin-left:120px; margin-top: 10%; width: 100%; background-size: 100% 100%; height: 160px;width: 135%;">
                 <div class="flex">
 
                     <h5 class="text-white"
-                        style="margin-left: auto;margin-top: 73px;margin-bottom: auto; margin-right: 15%;">
+                        style="margin-left: auto;margin-top: 70px;margin-bottom: auto; margin-right: 15%;">
                         {{cvc}}</h5>
 
                 </div>
@@ -81,7 +81,7 @@
 
             <!-- version tablet end -->
             <div class=" d-none d-lg-block " style="background-image: url('assets/bg-card-front.png'); background-repeat: no-repeat;
-             margin-left:60%; margin-top: 20%; width: 100%; background-size: 100% 100%; height: 40%;width: 130%;">
+             margin-left:60%; margin-top: 120px; width: 100%; background-size: 100% 100%; height: 230px;width: 130%;">
                 <div>
 
                     <img src="assets/card-logo.svg" alt=""
@@ -97,12 +97,12 @@
                 </div>
             </div>
             <div class="d-none d-lg-block " style="background-image: url('assets/bg-card-back.png'); background-repeat: no-repeat;
-             margin-left:90%; margin-top: 10%; width: 100%; background-size: 100% 100%; height: 40%;width: 130%;">
+             margin-left:90%; margin-top: 10%; width: 100%; background-size: 100% 100%; height: 230px;width: 130%;">
                 <div class="flex">
 
-                    <h5 class="text-white"
-                        style="margin-left: auto;margin-top: 110px;margin-bottom: auto; margin-right: 15%;">
-                        {{cvc}}</h5>
+                    <h4 class="text-white"
+                        style="margin-left: auto;margin-top: 100px;margin-bottom: auto; margin-right: 15%;">
+                        {{cvc}}</h4>
 
                 </div>
             </div>
@@ -111,7 +111,7 @@
         </div>
 
         <div class="col-lg-4 col-sm-12 col-md-5">
-            <div style="margin-left: 40px; margin-top: 20%; margin-right: 40px; margin-bottom: 10px;" class=""
+            <div style="margin-left: 40px; margin-top: 150px; margin-right: 40px; margin-bottom: 10px;" class=""
                 *ngIf="success == true">
 
                 <div>
@@ -162,8 +162,12 @@
                     style="margin-top: 5%; background-color: hsl(278, 68%, 11%);" (click)="change()">Continue</button>
             </div>
 
+            
+        
         </div>
+        
+
     </div>
-    
+     
 </form>
 <router-outlet></router-outlet>
