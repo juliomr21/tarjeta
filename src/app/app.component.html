@@ -1,20 +1,31 @@
-
-
-<form [formGroup]="form">
+<form [formGroup]="form" style="font-family: Space Grotesk;">
 
     <div class="row">
-        <div class="col-sm-3"
-            style="background-image: url('/assets/bg-main-desktop.png');background-repeat: no-repeat;background-attachment: fixed; height: 620px;">
 
-            <div class="" style="background-image: url('assets/bg-card-front.png'); background-repeat: no-repeat;
-             margin-left:60%; margin-top: 20%; width: 100%; background-size: 100% 100%; height: 40%;width: 130%;">
+        <!--movil version  -->
+        <div class="d-sm-none"
+            style="background-image: url('/assets/bg-main-mobile.png');background-repeat: no-repeat;background-attachment: fixed; height: 240px; width: 100%;">
+
+            <div class="d-sm-none" style="background-image: url('assets/bg-card-back.png'); background-repeat: no-repeat;
+     margin-left:70px; margin-top: 30px; width: 100%; background-size: 100% 100%; height: 170px;width: 280px;">
+                <div class="flex">
+
+                    <h5 class="text-white"
+                        style="margin-left: auto;margin-top: 70px;margin-bottom: auto; margin-right: 15%;">
+                        {{cvc}}</h5>
+
+                </div>
+            </div>
+
+            <div class="d-sm-none" style="background-image: url('assets/bg-card-front.png'); background-repeat: no-repeat;
+     margin-left:15px; margin-top: -75px; width: 100%; background-size: 100% 100%; height: 170px;width: 280px;">
                 <div>
 
                     <img src="assets/card-logo.svg" alt=""
                         style="margin-top: 3%; width: 20%; height: 20%; margin-left: 5%;">
-                   
-                    <h2 class=" text-white text-center" style="margin-left: 5%; margin-top: 10%">{{numero | mask: '0000
-                        0000 0000 0000'}}</h2>
+
+                    <h3 class=" text-white text-center" style="margin-left: 5%; margin-top: 10%">
+                        {{numero | mask: '0000 0000 0000 0000'}}</h3>
                     <div class="flex text-white" style="margin-top: 8%;">
                         <p style="margin-left: 5%;">{{nombre}}</p>
                         <p style="margin-left: auto; margin-right: 5%;">{{mm}}/{{yy}}</p>
@@ -22,57 +33,126 @@
                     </div>
                 </div>
             </div>
-            <div class="" style="background-image: url('assets/bg-card-back.png'); background-repeat: no-repeat;
-             margin-left:90%; margin-top: 10%; width: 100%; background-size: 100% 100%; height: 40%;width: 130%;">
+
+
+        </div>
+
+
+        <!-- Movil version end -->
+
+
+
+
+
+        <div class="col-md-3 col-sm-12 d-none d-md-block"
+            style="background-image: url('/assets/bg-main-desktop.png');background-repeat: no-repeat;background-attachment: fixed; height: 620px;">
+
+
+
+            <!-- version tablet -->
+            <div class="d-none d-md-block d-lg-none" style="background-image: url('assets/bg-card-front.png'); background-repeat: no-repeat;
+            margin-left:60%; margin-top: 50%; width: 100%; background-size: 100% 100%; height: 28%;width: 135%;">
+                <div>
+
+                    <img src="assets/card-logo.svg" alt=""
+                        style="margin-top: 3%; width: 20%; height: 20%; margin-left: 5%;">
+
+                    <h3 class=" text-white text-center"
+                     style="margin-left: 5%; margin-top: 10%">{{numero | mask: '0000 0000 0000 0000'}}</h3>
+                    <div class="flex text-white" style="margin-top: 8%;">
+                        <p style="margin-left: 5%;">{{nombre}}</p>
+                        <p style="margin-left: auto; margin-right: 5%;">{{mm}}/{{yy}}</p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="d-none d-md-block d-lg-none" style="background-image: url('assets/bg-card-back.png'); background-repeat: no-repeat;
+            margin-left:90%; margin-top: 10%; width: 100%; background-size: 100% 100%; height: 28%;width: 135%;">
                 <div class="flex">
 
-                    <h5 class="text-white" style="margin-left: auto;margin-top: 110px;margin-bottom: auto; margin-right: 15%;">
+                    <h5 class="text-white"
+                        style="margin-left: auto;margin-top: 73px;margin-bottom: auto; margin-right: 15%;">
                         {{cvc}}</h5>
-                    <!-- <img src="assets/bg-card-front.png" width="30%"alt="" style="position: absolute;"> -->
-
 
                 </div>
             </div>
 
 
 
+            <!-- version tablet end -->
+            <div class=" d-none d-lg-block " style="background-image: url('assets/bg-card-front.png'); background-repeat: no-repeat;
+             margin-left:60%; margin-top: 20%; width: 100%; background-size: 100% 100%; height: 40%;width: 130%;">
+                <div>
+
+                    <img src="assets/card-logo.svg" alt=""
+                        style="margin-top: 3%; width: 20%; height: 20%; margin-left: 5%;">
+
+                    <h2 class=" text-white text-center"
+                     style="margin-left: 5%; margin-top: 10%">{{numero | mask: '0000 0000 0000 0000'}}</h2>
+                    <div class="flex text-white" style="margin-top: 8%;">
+                        <p style="margin-left: 5%;">{{nombre}}</p>
+                        <p style="margin-left: auto; margin-right: 5%;">{{mm}}/{{yy}}</p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="d-none d-lg-block " style="background-image: url('assets/bg-card-back.png'); background-repeat: no-repeat;
+             margin-left:90%; margin-top: 10%; width: 100%; background-size: 100% 100%; height: 40%;width: 130%;">
+                <div class="flex">
+
+                    <h5 class="text-white"
+                        style="margin-left: auto;margin-top: 110px;margin-bottom: auto; margin-right: 15%;">
+                        {{cvc}}</h5>
+
+                </div>
+            </div>
         </div>
-        <div class="col-sm-8">
-            <div style="margin-left: 55%; margin-top: 20%; margin-right: 10%;" class="" *ngIf="success == true">
+        <div class="col-md-4 col-sm-12">
+        </div>
+
+        <div class="col-md-4 col-sm-12">
+            <div style="margin-left: 40px; margin-top: 20%; margin-right: 40px; margin-bottom: 10px;" class=""
+                *ngIf="success == true">
 
                 <div>
-                    <label style="font-size:14px">CARDHOLDER NAME</label>
-                    <input [ngStyle]="style_nombre" class="form-control" placeholder="e.g. Jane Appleseed" formControlName="nombre">
+                    <label style="font-size:18px">CARDHOLDER NAME</label>
+                    <input [ngStyle]="style_nombre" class="form-control" placeholder="e.g. Jane Appleseed"
+                        formControlName="nombre" mask="AAAAAAAAAAAAAAAAAA">
                     <label [ngStyle]="label_nombre">Can`t be blank</label>
                 </div>
                 <div style="margin-top: 5%;">
-                    <label style="font-size: 14px;">CARD NUMBER</label>
-                    <input [ngStyle]="style_number" type="text" class="form-control" placeholder=" e.g. 1234 5678 9123 0000"
-                        formControlName="numero" mask="0000 0000 0000 0000" (keypress)="keyPress1($event)">
-                    <label [ngStyle]="label_numero" >Wrong formats, numbers only</label>
+                    <label style="font-size: 18px;">CARD NUMBER</label>
+                    <input [ngStyle]="style_number" type="text" class="form-control"
+                        placeholder=" e.g. 1234 5678 9123 0000" formControlName="numero" mask="0000 0000 0000 0000"
+                        (keypress)="keyPress1($event)">
+                    <label [ngStyle]="label_numero">Wrong formats, numbers only</label>
                 </div>
-                <Label style="margin-top: 3%; font-size:14px">EXP. DATE (MM/YY) CVC</Label>
+                <Label style="margin-top: 3%; font-size:18px">EXP. DATE (MM/YY) CVC</Label>
                 <div class="flex">
                     <div>
-                        <input [ngStyle]="style_mm" class="input-short form-control" placeholder=" MM" formControlName="mm" mask="00">
+                        <input [ngStyle]="style_mm" class="input-short form-control" placeholder=" MM"
+                            formControlName="mm" mask="00">
                         <label [ngStyle]="label_mm">Can`t be blank</label>
                     </div>
                     <div>
-                        <input [ngStyle]="style_yy" class="input-short form-control" placeholder=" YY" formControlName="yy" mask="00">
-                        <label [ngStyle]="label_yy" >Can`t be blank</label>
+                        <input [ngStyle]="style_yy" class="input-short form-control" placeholder=" YY"
+                            formControlName="yy" mask="00">
+                        <label [ngStyle]="label_yy">Can`t be blank</label>
                     </div>
                     <div>
-                        <input [ngStyle]="style_cvc" class="form-control" style="margin-left: 5px;" placeholder=" e.g. 123"
-                            formControlName="CVC" mask="0000">
-                            <label [ngStyle]="label_cvc">Can`t be blank</label>
+                        <input [ngStyle]="style_cvc" class="form-control" style="margin-left: 5px;"
+                            placeholder=" e.g. 123" formControlName="CVC" mask="0000">
+                        <label [ngStyle]="label_cvc">Can`t be blank</label>
 
                     </div>
                 </div>
 
                 <button class="btn form-control text-white "
                     style="margin-top: 5%; background-color: hsl(278, 68%, 11%);" (click)="change()">Confirm</button>
+
             </div>
-            <div style="margin-left: 55%; margin-top: 20%; margin-right: 10%;" class="" *ngIf="success == false">
+            <div style="margin-left: 40px; margin-top: 40%;margin-bottom: auto; margin-right: 40px;" class=""
+                *ngIf="success == false">
                 <img src="assets/icon-complete.svg" alt="" style="margin-left: 35%;">
                 <h1 class="text-center">Thank you!</h1>
                 <h5 class="text-center">We've added your card details</h5>
@@ -82,13 +162,7 @@
                     style="margin-top: 5%; background-color: hsl(278, 68%, 11%);" (click)="change()">Continue</button>
             </div>
 
-
         </div>
-
     </div>
-
-
 </form>
-
-
 <router-outlet></router-outlet>

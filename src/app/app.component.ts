@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { NgxMaskModule } from 'ngx-mask';
+// import { NgxMaskModule } from 'ngx-mask';
+// import { max } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -16,9 +17,9 @@ export class AppComponent {
   mm = '00';
   yy = '00';
   cvc = '000';
-  wrong_input = { "font-size": "12px", "color": "red" };
+  wrong_input = { "font-size": "12px", "color": "hsl(0, 100%, 66%)" };
   style_input = { "font-size": "12px", "color": "transparent" };
-  style_wrong_campo = { "border-color": "red" };
+  style_wrong_campo = { "border-color": "hsl(0, 100%, 66%)" };
   style_ok_campo = { "border-color": "cadetblue", };
   style_nombre = this.style_ok_campo;
   style_number = this.style_ok_campo;
@@ -35,12 +36,13 @@ export class AppComponent {
   constructor(private fb: FormBuilder) {
     this.form = fb.group({
       nombre: ['', [Validators.required]],
-      numero: ['', [Validators.required, Validators.minLength(16)]],
+      numero: ['', [Validators.required, Validators.minLength(16),Validators.maxLength(16)]],
       mm: ['', [Validators.required]],
       yy: ['', [Validators.required]],
       CVC: ['', [Validators.required]]
     });
   }
+ 
   change() {
 
     if (!this.success) {
@@ -51,6 +53,7 @@ export class AppComponent {
       this.yy = '00';
       this.cvc = '000';
       this.form.reset();
+      
       return;
     }
     this.style_nombre = this.style_ok_campo;
@@ -94,20 +97,21 @@ export class AppComponent {
   keyPress1(event: KeyboardEvent) {
 
 
-    if (this.form.value.numero.length != 16) {
+   
       const pattern = /[0-9]/;
       const inputChar = String.fromCharCode(event.charCode);
       if (!pattern.test(inputChar)) {
         this.label_numero = this.wrong_input;
         this.style_number = { "border-color": "red" }
         event.preventDefault();
-      } else {
+      } 
+      else {
         this.label_numero = { "font-size": "12px", "color": "transparent" };
         this.style_number = { "border-color": "cadetblue" };
         
       }
 
-    }
+    
   }
 
 }
