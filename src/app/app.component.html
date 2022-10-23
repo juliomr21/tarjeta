@@ -3,10 +3,10 @@
     <div class="row">
 
         <!--movil version  -->
-        <div class="d-sm-none"
+        <div class="d-md-none"
             style="background-image: url('assets/bg-main-mobile.png');background-repeat: no-repeat;background-size: 100% 100%; height: 230px; width: 100%; ">
 
-            <div class="d-sm-none" style="background-image: url('assets/bg-card-back.png'); background-repeat: no-repeat;
+            <div class="d-md-none" style="background-image: url('assets/bg-card-back.png'); background-repeat: no-repeat;
      margin-left:70px; margin-top: 30px; width: 100%; background-size: 100% 100%; height: 170px;width: 280px;">
                 <div class="flex">
 
@@ -17,7 +17,7 @@
                 </div>
             </div>
 
-            <div class="d-sm-none" style="background-image: url('assets/bg-card-front.png'); background-repeat: no-repeat;
+            <div class="d-md-none" style="background-image: url('assets/bg-card-front.png'); background-repeat: no-repeat;
      margin-left:15px; margin-top: -75px; width: 100%; background-size: 100% 100%; height: 170px;width: 280px;">
                 <div>
 
@@ -44,8 +44,8 @@
 
 
 
-        <div class="col-md-3 col-sm-12 d-none d-md-block"
-            style="background-image: url('assets/bg-main-desktop.png');background-repeat: no-repeat;background-attachment: fixed; height: 620px;">
+        <div class="col-md-3 col-lg-3 col-sm-12 d-none d-md-block"
+            style="background-image: url('assets/bg-main-desktop.png');background-repeat: no-repeat;background-attachment: fixed; height: 620px;background-size: 100%;">
 
 
 
@@ -87,8 +87,8 @@
                     <img src="assets/card-logo.svg" alt=""
                         style="margin-top: 3%; width: 20%; height: 20%; margin-left: 5%;">
 
-                    <h3 class=" text-white text-center"
-                     style="margin-left: 5%; margin-top: 10%">{{numero | mask: '0000 0000 0000 0000'}}</h3>
+                    <h2 class=" text-white text-center"
+                     style="margin-left: 5%; margin-top: 10%">{{numero | mask: '0000 0000 0000 0000'}}</h2>
                     <div class="flex text-white" style="margin-top: 8%;">
                         <p style="margin-left: 5%;">{{nombre}}</p>
                         <p style="margin-left: auto; margin-right: 5%;">{{mm}}/{{yy}}</p>
@@ -107,17 +107,17 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4 col-sm-12 ">
+        <div class="col-lg-4 col-sm-12 col-md-3">
         </div>
 
-        <div class="col-md-4 col-sm-12">
+        <div class="col-lg-4 col-sm-12 col-md-5">
             <div style="margin-left: 40px; margin-top: 20%; margin-right: 40px; margin-bottom: 10px;" class=""
                 *ngIf="success == true">
 
                 <div>
                     <label style="font-size:18px">CARDHOLDER NAME</label>
                     <input [ngStyle]="style_nombre" class="form-control" placeholder="e.g. Jane Appleseed"
-                        formControlName="nombre" mask="AAAAAAAAAAAAAAAAAA">
+                        formControlName="nombre">
                     <label [ngStyle]="label_nombre">Can`t be blank</label>
                 </div>
                 <div style="margin-top: 5%;">
@@ -164,5 +164,6 @@
 
         </div>
     </div>
+    
 </form>
 <router-outlet></router-outlet>
