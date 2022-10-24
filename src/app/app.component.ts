@@ -35,9 +35,9 @@ export class AppComponent {
   public form: FormGroup;
   constructor(private fb: FormBuilder) {
     this.form = fb.group({
-      nombre: ['', [Validators.required]],
+      nombre: ['', [Validators.required, Validators.maxLength(12)]],
       numero: ['', [Validators.required, Validators.minLength(16),Validators.maxLength(16)]],
-      mm: ['', [Validators.required]],
+      mm: ['', [Validators.required,Validators.max(12)]],
       yy: ['', [Validators.required]],
       CVC: ['', [Validators.required]]
     });
@@ -113,5 +113,7 @@ export class AppComponent {
 
     
   }
+ 
+
 
 }

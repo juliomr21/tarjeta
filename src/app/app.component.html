@@ -45,7 +45,8 @@
 
 
         <div class="col-md-3 col-lg-3 col-sm-12 d-none d-md-block"
-            style="background-image: url('assets/bg-main-desktop.png');background-repeat: no-repeat;background-attachment: fixed; height: 860px;background-size: 100%;">
+            style="background-image: url('assets/bg-main-desktop.png');background-repeat: no-repeat;background-attachment: fixed;
+             height: 660px;background-size: 100%;">
 
 
 
@@ -87,8 +88,8 @@
                     <img src="assets/card-logo.svg" alt=""
                         style="margin-top: 3%; width: 20%; height: 20%; margin-left: 5%;">
 
-                    <h2 class=" text-white text-center"
-                     style="margin-left: 5%; margin-top: 10%">{{numero | mask: '0000 0000 0000 0000'}}</h2>
+                    <h3 class=" text-white text-center"
+                     style="margin-left: 5%; margin-top: 10%">{{numero | mask: '0000 0000 0000 0000'}}</h3>
                     <div class="flex text-white" style="margin-top: 8%;">
                         <p style="margin-left: 5%;">{{nombre}}</p>
                         <p style="margin-left: auto; margin-right: 5%;">{{mm}}/{{yy}}</p>
@@ -117,32 +118,32 @@
                 <div>
                     <label style="font-size:18px">CARDHOLDER NAME</label>
                     <input [ngStyle]="style_nombre" class="form-control" placeholder="e.g. Jane Appleseed"
-                        formControlName="nombre">
-                    <label [ngStyle]="label_nombre">Can`t be blank</label>
+                        formControlName="nombre" >
+                    <label [ngStyle]="label_nombre" *ngIf=" wrong_input == label_nombre">Can`t be blank</label>
                 </div>
                 <div style="margin-top: 5%;">
                     <label style="font-size: 18px;">CARD NUMBER</label>
                     <input [ngStyle]="style_number" type="text" class="form-control"
                         placeholder=" e.g. 1234 5678 9123 0000" formControlName="numero" mask="0000 0000 0000 0000"
                         (keypress)="keyPress1($event)">
-                    <label [ngStyle]="label_numero">Wrong formats, numbers only</label>
+                    <label [ngStyle]="label_numero"*ngIf=" wrong_input == label_numero">Wrong formats, must have 16 numbers</label>
                 </div>
                 <Label style="margin-top: 3%; font-size:18px">EXP. DATE (MM/YY) CVC</Label>
                 <div class="flex">
                     <div>
                         <input [ngStyle]="style_mm" class="input-short form-control" placeholder=" MM"
                             formControlName="mm" mask="00">
-                        <label [ngStyle]="label_mm">Can`t be blank</label>
+                        <label [ngStyle]="label_mm" *ngIf=" wrong_input == label_mm">Wrong format</label>
                     </div>
                     <div>
                         <input [ngStyle]="style_yy" class="input-short form-control" placeholder=" YY"
                             formControlName="yy" mask="00">
-                        <label [ngStyle]="label_yy">Can`t be blank</label>
+                        <label [ngStyle]="label_yy" *ngIf=" wrong_input == label_yy">Can`t be blank</label>
                     </div>
                     <div>
                         <input [ngStyle]="style_cvc" class="form-control" style="margin-left: 5px;"
                             placeholder=" e.g. 123" formControlName="CVC" mask="0000">
-                        <label [ngStyle]="label_cvc">Can`t be blank</label>
+                        <label [ngStyle]="label_cvc" *ngIf=" wrong_input == label_cvc">Can`t be blank</label>
 
                     </div>
                 </div>
@@ -162,7 +163,7 @@
                     style="margin-top: 5%; background-color: hsl(278, 68%, 11%);" (click)="change()">Continue</button>
             </div>
 
-            
+          
         
         </div>
         
