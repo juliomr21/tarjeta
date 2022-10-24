@@ -65,6 +65,8 @@ export class AppComponent {
     this.label_mm = this.style_input;
     this.label_yy = this.style_input;
     this.label_cvc = this.style_input;
+    this.label_numero = this.style_input;
+    
     const controls = this.form.controls;
     let temp = true;
     //this.success = true;
